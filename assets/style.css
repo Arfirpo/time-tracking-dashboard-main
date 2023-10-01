@@ -1,0 +1,207 @@
+:root{
+    --blue: hsl(246, 80%, 60%);
+    --lightOrange: hsl(15, 100%, 70%);
+    --softBlue: hsl(195, 74%, 62%);
+    --lightRed: hsl(348, 100%, 68%);
+    --limeGreen: hsl(145, 58%, 55%);
+    --violet: hsl(264, 64%, 52%);
+    --softOrange: hsl(43, 84%, 65%);
+    --veryDarkBlue: hsl(226, 43%, 10%);
+    --darkBlue: hsl(235, 46%, 20%);
+    --desaturatedBlue: hsl(235, 45%, 61%);
+    --paleBlue: hsl(236, 100%, 87%);
+    --white: rgba(255, 255, 255, 0.8);
+}
+
+*, 
+*::before, 
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--veryDarkBlue);
+    font-size: 18px;
+    font-family: 'Rubik', serif;
+    color: var(--paleBlue);
+}
+@font-face {
+    font-family: 'Rubik';
+    src: url(./font/Rubik-VariableFont_wght.ttf);
+}
+
+.container{
+    width: 328px;
+    margin: 160px auto;
+    .second-section{
+        padding-top: 230px;
+    }
+    @media (min-width:1200px) {
+        width: 1150px;
+        display: flex;
+        .first-section{
+            width: 280px;
+            height: 564px;
+            padding-top: 20px;
+        }
+        .second-section{
+            display: grid;
+            width: 860px;
+            height: 564px;
+            padding: 0;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            padding: 24px;
+        }
+    }
+}
+
+.main-card{
+    position: relative;
+    .main-card__user{
+        width: 100%;
+        background-color: var(--blue);
+        display: flex;
+        border-radius: 16px;
+        padding: 30px;
+        position: absolute;
+        z-index: 1;
+        .main-card__image{
+            width: 72px;
+            margin-right: 10px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+        }
+        .main-card__title{
+            font-size: 0.9em;
+            margin: 10px 0 4px;
+        }
+        .main-card__name{
+            font-size: 1.4em;
+            font-weight: 300;
+            color: var(--white);
+        }
+    }
+    .main-card__dates{
+        width: 100%;
+        height: 100px;
+        background-color: var(--darkBlue);
+        border-radius: 16px;
+        display: flex;
+        justify-content: space-around;
+        padding-top: 52px;
+        font-size: 1.2em;
+        position: absolute;
+        top: 110px;
+        & :hover{
+            cursor: pointer;
+            color: white;
+        }
+    }
+    @media (min-width:1200px) {
+        .main-card__user{
+            height: 360px;
+            flex-direction: column;
+            .main-card__image{
+                width: 85px;
+                margin-bottom: 45px;
+            }   
+            .main-card__title{
+                font-size: 1em;
+            }
+            .main-card__name{
+                font-size: 2.4em;
+            }
+        }
+        .main-card__dates{
+            margin-top: 215px;
+            height: 200px;
+            flex-direction: column;
+            padding: 50px 32px 18px;
+        }
+    }
+    
+}
+
+.card{
+    position: relative;
+    margin-bottom: 105px;
+    .card__background{
+        overflow: hidden;
+        background-color:var(--lightOrange);
+        height: 80px;
+        border-radius: 16px 16px 0 0;
+        .card__image{
+            margin-top: -10px;
+            padding-left: 235px;
+        }
+    }
+    .card__details{
+        width: 100%;
+        background-color: var(--darkBlue);
+        display: flex;
+        flex-direction: column;
+        height: 122px;
+        justify-content: space-between;
+        padding: 25px;
+        border-radius: 16px;
+        position: absolute;
+        bottom: -85px;
+        &:hover{
+            cursor: pointer;
+            background-color: var(--desaturatedBlue);
+        }
+        .card__activity, .card__time{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card__title{
+            font-weight: 500;
+            font-size: 1.2em;
+            color: white;
+        }
+        .card__hour{
+            font-size: 2em;
+            color: white;
+            font-weight: 300;
+        }
+    }
+    @media (min-width:1200px) {
+        width: 240px;
+        height: 244px;
+        margin-bottom: 30px;
+        .card__background{
+            .card__image{
+                padding-left: 140px;
+            }
+        }
+        .card__details{
+            height: 200px;
+            bottom: 0;
+            .card__time{
+                height: 300px;
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 20px 0;
+                .card__hour{
+                    font-size: 2.9em;
+                }
+            }
+        }
+
+    }
+}
+
+.attribution{
+    display: block;
+    margin: 0 auto;
+    width: 328px;
+    font-size: .66em; /* 12/18 */
+    border: 1px solid #fff;
+    & a{
+        color: var(--softOrange);
+        text-decoration: none;
+    }
+}
