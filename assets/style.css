@@ -40,6 +40,7 @@ body{
     @media (min-width:1200px) {
         width: 1150px;
         display: flex;
+        margin: 220px auto 50px;
         .first-section{
             width: 280px;
             height: 564px;
@@ -198,10 +199,14 @@ body{
     display: block;
     margin: 0 auto;
     width: 328px;
+    text-align: center;
     font-size: .66em; /* 12/18 */
-    border: 1px solid #fff;
     & a{
         color: var(--softOrange);
         text-decoration: none;
+    }
+    @media (min-width:1200px) {
+        width: 1150px;
+        font-size: 1em;
     }
 }
