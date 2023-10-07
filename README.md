@@ -1,6 +1,8 @@
 # Frontend Mentor - Time tracking dashboard solution
 
-This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+Hi everybody! 👋
+
+This is a solution to the [Time tracking dashboard challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/time-tracking-dashboard-UIQ7167Jw).
 
 ## Table of contents
 
@@ -14,9 +16,6 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
-
-**Note: Delete this note and update the table of contents based on what sections you keep.**
 
 ## Overview
 
@@ -25,25 +24,27 @@ This is a solution to the [Time tracking dashboard challenge on Frontend Mentor]
 Users should be able to:
 
 - View the optimal layout for the site depending on their device's screen size
+
+Mobile Layout
+
+![Mobile Layout](./assets/images/mobile-layout.jpg)
+
+Desktop Layout
+
+![Desktop Layout](./assets/images/desktop-layout.jpg)
+
 - See hover states for all interactive elements on the page
+
+![Desktop States](./assets/images/desktop-states.jpg)
+
 - Switch between viewing Daily, Weekly, and Monthly stats
 
-### Screenshot
-
-![](./screenshot.jpg)
-
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
-
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it. 
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
-
-**Note: Delete this note and the paragraphs above when you add your screenshot. If you prefer not to add a screenshot, feel free to remove this entire section.**
+![Desktop](./assets/images/desktop-switch-stats.gif)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution Repository: [Github Repository](https://github.com/Arfirpo/time-tracking-dashboard-main)
+- Solution Page: [Github Page](https://arfirpo.github.io/time-tracking-dashboard-main/)
 
 ## My process
 
@@ -54,15 +55,50 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 - Flexbox
 - CSS Grid
 - Mobile-first workflow
-- [React](https://reactjs.org/) - JS library
-- [Next.js](https://nextjs.org/) - React framework
-- [Styled Components](https://styled-components.com/) - For styles
-
-**Note: These are just examples. Delete this note and replace the list above with your own choices**
+- Javascript
+- Api/Json Files
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
+In this challenge i had the oportunity to learn another form to set a font in css.
+
+````css
+@font-face {
+    font-family: 'Rubik';
+    src: url(./font/Rubik-VariableFont_wght.ttf);
+}````
+
+Also, exercise the use of the for each function to create the activity cards on the page
+````js
+function drawElements(array){
+    secondSection.innerHTML = '';
+    array.forEach((element, index) => {
+        let title = data[index].title;
+        let titleLowerCase = title.toLocaleLowerCase();
+        if(titleLowerCase == 'self care'){
+            titleLowerCase = 'self-care'
+        }
+        secondSection.innerHTML += `
+        <div class="card">
+            <div class="card__background" style="background-color: ${bgColors[index]};">
+                <img class="card__image" src="./assets/images/icon-${titleLowerCase}.svg" alt="">
+            </div>
+            <div class="card__details">
+                <div class="card__activity">
+                    <p class="card__title">${title}</p>
+                    <img src="./assets/images/icon-ellipsis.svg" alt="ellipsis-icon">
+                </div>
+                <div class="card__time">
+                    <p class="card__hour">${element.current}Hrs</p>
+                    <p class="previous">Last week - ${element.previous}hrs</p>
+                </div>
+            </div>
+        </div>`
+    });
+}````
+
+
+
 
 To see how you can add code snippets, see below:
 
