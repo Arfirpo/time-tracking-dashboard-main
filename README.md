@@ -64,9 +64,11 @@ In this challenge i had the oportunity to learn another form to set a font in cs
 @font-face {
     font-family: 'Rubik';
     src: url(./font/Rubik-VariableFont_wght.ttf);
-}````
+}
+````
 
 Also, exercise the use of the for each function to create the activity cards on the page
+
 ````js
 function drawElements(array){
     secondSection.innerHTML = '';
